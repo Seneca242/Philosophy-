@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101B29E4995D00571072 /* AppDelegate.swift */; };
 		04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101D29E4995D00571072 /* SceneDelegate.swift */; };
-		04B8102029E4995D00571072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101F29E4995D00571072 /* ViewController.swift */; };
-		04B8102329E4995D00571072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8102129E4995D00571072 /* Main.storyboard */; };
+		04B8102029E4995D00571072 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101F29E4995D00571072 /* MenuViewController.swift */; };
 		04B8102529E4996000571072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B8102429E4996000571072 /* Assets.xcassets */; };
 		04B8102829E4996000571072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B8102629E4996000571072 /* LaunchScreen.storyboard */; };
+		04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */; };
+		04B8103229E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */; };
+		04B8103429E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04B8101829E4995D00571072 /* Philosophy!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Philosophy!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8101B29E4995D00571072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8101D29E4995D00571072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04B8101F29E4995D00571072 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04B8102229E4995D00571072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04B8101F29E4995D00571072 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		04B8102429E4996000571072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B8102729E4996000571072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B8102929E4996000571072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophersTableViewController.swift; sourceTree = "<group>"; };
+		04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalMovementsCollectionViewController.swift; sourceTree = "<group>"; };
+		04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalSchoolsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 			children = (
 				04B8101B29E4995D00571072 /* AppDelegate.swift */,
 				04B8101D29E4995D00571072 /* SceneDelegate.swift */,
-				04B8101F29E4995D00571072 /* ViewController.swift */,
-				04B8102129E4995D00571072 /* Main.storyboard */,
+				04B8101F29E4995D00571072 /* MenuViewController.swift */,
+				04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */,
+				04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */,
+				04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */,
 				04B8102429E4996000571072 /* Assets.xcassets */,
 				04B8102629E4996000571072 /* LaunchScreen.storyboard */,
 				04B8102929E4996000571072 /* Info.plist */,
@@ -127,7 +133,6 @@
 			files = (
 				04B8102829E4996000571072 /* LaunchScreen.storyboard in Resources */,
 				04B8102529E4996000571072 /* Assets.xcassets in Resources */,
-				04B8102329E4995D00571072 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +143,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B8102029E4995D00571072 /* ViewController.swift in Sources */,
+				04B8103429E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift in Sources */,
+				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,
+				04B8103229E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift in Sources */,
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
+				04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		04B8102129E4995D00571072 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04B8102229E4995D00571072 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04B8102629E4996000571072 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +292,6 @@
 				INFOPLIST_FILE = "Philosophy!/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +319,6 @@
 				INFOPLIST_FILE = "Philosophy!/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
