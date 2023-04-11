@@ -88,19 +88,26 @@ class MenuViewController: UIViewController {
     
     private func createTabbar(selectedIndex: Int) {
         let philosophersVC = PhilosophersTableViewController()
+        let philosophersNavigationVC = UINavigationController(rootViewController: philosophersVC)
         let philosophicalMovementsVC = PhilosophicalMovementsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         let philosophicalSchoolsVC = PhilosophicalSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         
         let tabbar = UITabBarController()
-        tabbar.tabBar.backgroundColor = .gray
+        tabbar.tabBar.backgroundColor = UIColor(
+            red: 183/255,
+            green: 65/255,
+            blue: 14/255,
+            alpha: 1
+        )
+        tabbar.tabBar.tintColor = .white
         
-        philosophersVC.tabBarItem = .init(
+        philosophersNavigationVC.tabBarItem = .init(
             title: "Philosophers",
             image: UIImage(named: "books"),
             selectedImage: UIImage(named: "books")
         )
         
-        philosophersVC.tabBarItem.badgeColor = .white
+        philosophersNavigationVC.tabBarItem.badgeColor = .white
         
         philosophicalMovementsVC.tabBarItem = .init(
             title: "Philosophical movements",
@@ -115,7 +122,7 @@ class MenuViewController: UIViewController {
         )
         
         tabbar.modalPresentationStyle = .fullScreen
-        tabbar.viewControllers = [philosophersVC, philosophicalMovementsVC, philosophicalSchoolsVC]
+        tabbar.viewControllers = [philosophersNavigationVC , philosophicalMovementsVC, philosophicalSchoolsVC]
         tabbar.selectedIndex = selectedIndex
         present(tabbar, animated: true)
     }
