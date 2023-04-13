@@ -15,6 +15,9 @@
 		04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */; };
 		04B8103229E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */; };
 		04B8103429E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */; };
+		04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D046F729E57BCF006FC424 /* PhilosophyModel.swift */; };
+		04D046FA29E5A7C7006FC424 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */; };
+		04D0470229E5CD45006FC424 /* PhilosophyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0470129E5CD45006FC424 /* PhilosophyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophersTableViewController.swift; sourceTree = "<group>"; };
 		04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalMovementsCollectionViewController.swift; sourceTree = "<group>"; };
 		04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalSchoolsCollectionViewController.swift; sourceTree = "<group>"; };
+		04D046F729E57BCF006FC424 /* PhilosophyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophyModel.swift; sourceTree = "<group>"; };
+		04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		04D0470129E5CD45006FC424 /* PhilosophyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +66,68 @@
 		04B8101A29E4995D00571072 /* Philosophy! */ = {
 			isa = PBXGroup;
 			children = (
-				04B8101B29E4995D00571072 /* AppDelegate.swift */,
-				04B8101D29E4995D00571072 /* SceneDelegate.swift */,
+				04D046FC29E5CBC8006FC424 /* ViewControllers */,
+				04D046FD29E5CBE7006FC424 /* Views */,
+				04D046FB29E5CBA3006FC424 /* Model */,
+				04D0470029E5CD0F006FC424 /* DataManager */,
+				04D046FE29E5CC0D006FC424 /* Sources */,
+				04D046FF29E5CC27006FC424 /* Supportings */,
+			);
+			path = "Philosophy!";
+			sourceTree = "<group>";
+		};
+		04D046FB29E5CBA3006FC424 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04D046F729E57BCF006FC424 /* PhilosophyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04D046FC29E5CBC8006FC424 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				04B8101F29E4995D00571072 /* MenuViewController.swift */,
 				04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */,
 				04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */,
 				04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		04D046FD29E5CBE7006FC424 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04D046FE29E5CC0D006FC424 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				04B8102429E4996000571072 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		04D046FF29E5CC27006FC424 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
 				04B8102629E4996000571072 /* LaunchScreen.storyboard */,
+				04B8101B29E4995D00571072 /* AppDelegate.swift */,
+				04B8101D29E4995D00571072 /* SceneDelegate.swift */,
 				04B8102929E4996000571072 /* Info.plist */,
 			);
-			path = "Philosophy!";
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		04D0470029E5CD0F006FC424 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				04D0470129E5CD45006FC424 /* PhilosophyData.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,11 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D0470229E5CD45006FC424 /* PhilosophyData.swift in Sources */,
 				04B8103429E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift in Sources */,
 				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,
 				04B8103229E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift in Sources */,
+				04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */,
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
+				04D046FA29E5A7C7006FC424 /* PersonTableViewCell.swift in Sources */,
 				04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KGB5T28U9V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Philosophy!/Info.plist";
+				INFOPLIST_FILE = "Philosophy!/Supportings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -316,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KGB5T28U9V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Philosophy!/Info.plist";
+				INFOPLIST_FILE = "Philosophy!/Supportings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
