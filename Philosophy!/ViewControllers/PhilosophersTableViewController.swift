@@ -9,22 +9,31 @@ import UIKit
 
 class PhilosophersTableViewController: UITableViewController {
 
+    private let cellID = "philosopherCell"
+    private let philosopher: Philosopher?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         setupNavigationBar()
+        tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellID)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        Movement.getMovement().count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        Philosopher.getPhilosopher().count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        guard let cell = cell as? PersonTableViewCell else { return UITableViewCell() }
+        cell.configure(with: philosopher ?? )
+        return cell
     }
 
     private func setupNavigationBar() {
@@ -58,4 +67,6 @@ class PhilosophersTableViewController: UITableViewController {
     @objc func backAction() {
         dismiss(animated: true)
     }
+    
+    
 }
