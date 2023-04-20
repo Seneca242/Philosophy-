@@ -93,17 +93,23 @@ class MenuViewController: UIViewController {
         let philosophicalSchoolsVC = PhilosophicalSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         
         let tabbar = UITabBarController()
-        tabbar.tabBar.backgroundColor = UIColor(
+        let appearance = UITabBarAppearance()
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        appearance.backgroundColor = UIColor(
             red: 183/255,
             green: 65/255,
             blue: 14/255,
             alpha: 1
         )
+        
+        tabbar.tabBar.standardAppearance = appearance
+        tabbar.tabBar.scrollEdgeAppearance = appearance
         tabbar.tabBar.tintColor = .white
+//        tabbar.tabBar.unselectedItemTintColor = UIColor.black
         
         philosophersNavigationVC.tabBarItem = .init(
             title: "Philosophers",
-            image: UIImage(named: "books"),
+            image: UIImage(named: "books")?.withTintColor(.black) .withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "books")
         )
         
@@ -111,13 +117,13 @@ class MenuViewController: UIViewController {
         
         philosophicalMovementsVC.tabBarItem = .init(
             title: "Philosophical movements",
-            image: UIImage(named: "graduationcap"),
+            image: UIImage(named: "graduationcap")?.withTintColor(.black) .withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "graduationcap")
         )
         
         philosophicalSchoolsVC.tabBarItem = .init(
             title: "Philosophical schools",
-            image: UIImage(named: "list"),
+            image: UIImage(named: "list")?.withTintColor(.black) .withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "list")
         )
         
