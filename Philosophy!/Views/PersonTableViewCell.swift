@@ -20,15 +20,14 @@ class PersonTableViewCell: UITableViewCell {
     
     private lazy var philosopherImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
-        image.layer.cornerRadius = image.frame.width / 2
-        image.layer.masksToBounds = true
+//        image.contentMode = .scaleAspectFit
+//        image.layer.cornerRadius = image.frame.width / 2
+//        image.layer.masksToBounds = true
         return image
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        changeCornerRadius()
         setupConstraints()
     }
     
@@ -36,12 +35,13 @@ class PersonTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func changeCornerRadius() {
-        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
-        philosopherImage.layer.borderColor = UIColor.blue.cgColor
-        philosopherImage.layer.borderWidth = 3
-        philosopherImage.layer.masksToBounds = true
-    }
+//    func changeCornerRadius() {
+//        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+//        philosopherImage.layer.borderColor = UIColor.blue.cgColor
+//        philosopherImage.layer.borderWidth = 3
+//        philosopherImage.layer.masksToBounds = true
+//        philosopherImage.contentMode = .scaleAspectFit
+//    }
     
     func configure(with philosopher: Philosopher) {
         namePhilosopherLabel.text = philosopher.name
@@ -49,7 +49,8 @@ class PersonTableViewCell: UITableViewCell {
         namePhilosopherLabel.textColor = .white
         philosopherImage.image = UIImage(named: "\(philosopher.philosopherImage)")
         philosopherImage.backgroundColor = .black
-        philosopherImage.layer.cornerRadius = philosopherImage.frame.height / 2
+        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+        philosopherImage.contentMode = .scaleAspectFill
         philosopherImage.clipsToBounds = true
     }
     
@@ -59,10 +60,8 @@ class PersonTableViewCell: UITableViewCell {
         
         philosopherImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-//            philosopherImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             philosopherImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             philosopherImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-//            philosopherImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
             philosopherImage.trailingAnchor.constraint(equalTo: namePhilosopherLabel.leadingAnchor, constant: -15),
             philosopherImage.heightAnchor.constraint(equalToConstant: 50),
             philosopherImage.widthAnchor.constraint(equalToConstant: 50)
@@ -71,8 +70,9 @@ class PersonTableViewCell: UITableViewCell {
         namePhilosopherLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             namePhilosopherLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            namePhilosopherLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            namePhilosopherLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 5)
+//            namePhilosopherLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
+            namePhilosopherLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+//            namePhilosopherLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 5)
         ])
     }
 

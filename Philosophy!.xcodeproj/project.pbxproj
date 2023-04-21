@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
 		04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101B29E4995D00571072 /* AppDelegate.swift */; };
 		04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101D29E4995D00571072 /* SceneDelegate.swift */; };
 		04B8102029E4995D00571072 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101F29E4995D00571072 /* MenuViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosopherDetailsViewController.swift; sourceTree = "<group>"; };
 		04B8101829E4995D00571072 /* Philosophy!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Philosophy!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8101B29E4995D00571072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8101D29E4995D00571072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				04B8101F29E4995D00571072 /* MenuViewController.swift */,
 				04B8102F29E499E400571072 /* PhilosophersTableViewController.swift */,
+				045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */,
 				04B8103129E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift */,
 				04B8103329E49A1B00571072 /* PhilosophicalSchoolsCollectionViewController.swift */,
 			);
@@ -207,6 +210,7 @@
 				04B8103229E49A0200571072 /* PhilosophicalMovementsCollectionViewController.swift in Sources */,
 				04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */,
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
+				045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */,
 				04D046FA29E5A7C7006FC424 /* PersonTableViewCell.swift in Sources */,
 				04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */,
 			);

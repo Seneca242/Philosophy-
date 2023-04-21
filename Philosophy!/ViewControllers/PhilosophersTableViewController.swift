@@ -19,6 +19,7 @@ class PhilosophersTableViewController: UITableViewController {
         tableView.backgroundColor = .black
         setupNavigationBar()
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellID)
+       
     }
 
     // MARK: - Table view data source
@@ -35,11 +36,21 @@ class PhilosophersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         guard let cell = cell as? PersonTableViewCell else { return UITableViewCell() }
         cell.backgroundColor = .black
+//        guard let philosopher = philosopher else { return cell }
         let philosopher = Philosopher.getPhilosopher()[indexPath.row]
         cell.configure(with: philosopher)
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let philosopherDetailsVC = PhilosopherDetailsViewController()
+        let philosoher = Philosopher.getPhilosopher()[indexPath.row]
+        philosopherDetailsVC.philosopher = philosoher
+//        navigationController?.pushViewController(philosopherDetailsVC, animated: true)
+        present(philosopherDetailsVC, animated: true)
+    }
+    
     private func setupNavigationBar() {
         title = "Philosophers"
 //        navigationController?.navigationBar.prefersLargeTitles = true
