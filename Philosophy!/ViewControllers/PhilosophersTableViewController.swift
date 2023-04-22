@@ -10,7 +10,9 @@ import UIKit
 class PhilosophersTableViewController: UITableViewController {
 
     private let cellID = "philosopherCell"
+    
 //    private let philosopher: Philosopher?
+    private let philosopher = Philosopher.getPhilosopher()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,7 @@ class PhilosophersTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Philosopher.getPhilosopher().count
+        philosopher.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +39,7 @@ class PhilosophersTableViewController: UITableViewController {
         guard let cell = cell as? PersonTableViewCell else { return UITableViewCell() }
         cell.backgroundColor = .black
 //        guard let philosopher = philosopher else { return cell }
-        let philosopher = Philosopher.getPhilosopher()[indexPath.row]
+        let philosopher = philosopher[indexPath.row]
         cell.configure(with: philosopher)
         return cell
     }
@@ -45,7 +47,7 @@ class PhilosophersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let philosopherDetailsVC = PhilosopherDetailsViewController()
-        let philosoher = Philosopher.getPhilosopher()[indexPath.row]
+        let philosoher = philosopher[indexPath.row]
         philosopherDetailsVC.philosopher = philosoher
 //        navigationController?.pushViewController(philosopherDetailsVC, animated: true)
         present(philosopherDetailsVC, animated: true)
