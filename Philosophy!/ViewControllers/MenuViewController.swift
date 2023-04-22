@@ -80,8 +80,6 @@ class MenuViewController: UIViewController {
         addSubviews(subViews: backgroundScreenImage, stackView, phylosophyTitle)
         addSubviewsToStackView(subviews: listOfPhilosophersButton, philosophicalMovementsButton, philosophicalSchoolsButton)
         setupConstraints()
-        let philosopherDetailsVC = PhilosopherDetailsViewController()
-        let navigationController = UINavigationController(rootViewController: philosopherDetailsVC)
     }
     
     @objc private func openScreenWithTabbar(_ button: UIButton) {
@@ -167,9 +165,8 @@ class MenuViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 78),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }

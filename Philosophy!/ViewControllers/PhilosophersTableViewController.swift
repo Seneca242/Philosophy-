@@ -38,7 +38,6 @@ class PhilosophersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         guard let cell = cell as? PersonTableViewCell else { return UITableViewCell() }
         cell.backgroundColor = .black
-//        guard let philosopher = philosopher else { return cell }
         let philosopher = philosopher[indexPath.row]
         cell.configure(with: philosopher)
         return cell
@@ -50,13 +49,11 @@ class PhilosophersTableViewController: UITableViewController {
         let philosoher = philosopher[indexPath.row]
         philosopherDetailsVC.philosopher = philosoher
         navigationController?.pushViewController(philosopherDetailsVC, animated: true)
-//        present(philosopherDetailsVC, animated: true)
     }
     
     private func setupNavigationBar() {
         title = "Philosophers"
 //        navigationController?.navigationBar.prefersLargeTitles = true
-
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
