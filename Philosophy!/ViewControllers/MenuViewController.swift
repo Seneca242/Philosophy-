@@ -80,6 +80,8 @@ class MenuViewController: UIViewController {
         addSubviews(subViews: backgroundScreenImage, stackView, phylosophyTitle)
         addSubviewsToStackView(subviews: listOfPhilosophersButton, philosophicalMovementsButton, philosophicalSchoolsButton)
         setupConstraints()
+        let philosopherDetailsVC = PhilosopherDetailsViewController()
+        let navigationController = UINavigationController(rootViewController: philosopherDetailsVC)
     }
     
     @objc private func openScreenWithTabbar(_ button: UIButton) {
@@ -91,7 +93,6 @@ class MenuViewController: UIViewController {
         let philosophersNavigationVC = UINavigationController(rootViewController: philosophersVC)
         let philosophicalMovementsVC = PhilosophicalMovementsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         let philosophicalSchoolsVC = PhilosophicalSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
-        
         let tabbar = UITabBarController()
         let appearance = UITabBarAppearance()
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]

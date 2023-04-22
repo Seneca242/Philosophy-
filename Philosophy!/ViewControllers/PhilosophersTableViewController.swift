@@ -44,13 +44,13 @@ class PhilosophersTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let philosopherDetailsVC = PhilosopherDetailsViewController()
         let philosoher = philosopher[indexPath.row]
         philosopherDetailsVC.philosopher = philosoher
-//        navigationController?.pushViewController(philosopherDetailsVC, animated: true)
-        present(philosopherDetailsVC, animated: true)
+        navigationController?.pushViewController(philosopherDetailsVC, animated: true)
+//        present(philosopherDetailsVC, animated: true)
     }
     
     private func setupNavigationBar() {
