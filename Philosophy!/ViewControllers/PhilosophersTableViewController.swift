@@ -8,7 +8,7 @@
 import UIKit
 
 class PhilosophersTableViewController: UITableViewController {
-
+    
     private let cellID = "philosopherCell"
     
 //    private let philosopher: Philosopher?
