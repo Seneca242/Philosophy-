@@ -37,7 +37,12 @@ class PhilosophersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         guard let cell = cell as? PersonTableViewCell else { return UITableViewCell() }
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .black
+        cell.selectedBackgroundView = backgroundView
         cell.backgroundColor = .black
+        
         let philosopher = philosopher[indexPath.row]
         cell.configure(with: philosopher)
         return cell
@@ -48,6 +53,12 @@ class PhilosophersTableViewController: UITableViewController {
         let philosopherDetailsVC = PhilosopherDetailsViewController()
         let philosoher = philosopher[indexPath.row]
         philosopherDetailsVC.philosopher = philosoher
+        
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .black
+        selectedCell?.selectedBackgroundView = backgroundView
+        
         navigationController?.pushViewController(philosopherDetailsVC, animated: true)
     }
     
