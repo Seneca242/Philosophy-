@@ -110,6 +110,8 @@ class PhilosopherDetailsViewController: UIViewController {
     private lazy var philosopherImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: philosopher?.philosopherImage ?? "")
+        image.contentMode = .scaleAspectFill
+        
         return image
     }()
 
@@ -126,12 +128,24 @@ class PhilosopherDetailsViewController: UIViewController {
     }()
 
     var philosopher: Philosopher?
+    
+    // philosopherImage.bounds.width / 2 - не константа
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        philosopherImage.layer.cornerRadius = philosopherImage.bounds.width / 2
+        philosopherImage.clipsToBounds = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
         navigationItem.title = philosopher?.name
-        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+        
+//        philosopherImage.layer.borderColor = UIColor.white.cgColor
+//        philosopherImage.layer.borderWidth = 3
+//        philosopherImage.layer.shadowColor = UIColor.red.cgColor
+//        philosopherImage.layer.shadowOffset = .init(width: 5, height: 5)
+
     }
 
     private func setupConstraints() {
@@ -139,7 +153,10 @@ class PhilosopherDetailsViewController: UIViewController {
         scrollView.addSubview(contentView)
         contentView.addSubview(philosopherImage)
         contentView.addSubview(biographyLabel)
-
+        
+        //
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
         philosopherImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             philosopherImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
