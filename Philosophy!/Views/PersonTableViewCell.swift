@@ -35,13 +35,10 @@ class PersonTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func changeCornerRadius() {
-//        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
-//        philosopherImage.layer.borderColor = UIColor.blue.cgColor
-//        philosopherImage.layer.borderWidth = 3
-//        philosopherImage.layer.masksToBounds = true
-//        philosopherImage.contentMode = .scaleAspectFit
-//    }
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+    }
     
     func configure(with philosopher: Philosopher) {
         namePhilosopherLabel.text = philosopher.name
