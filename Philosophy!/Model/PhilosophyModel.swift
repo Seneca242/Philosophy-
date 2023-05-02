@@ -158,6 +158,41 @@ struct School {
     let description: String
     let movement: [Movement]?
     let philosopher: [Philosopher]?
+    
+    static func getSchool() -> [School] {
+        [
+            School(
+                title: "Milesian School",
+                description: "The Milesian School was a pre-Socratic philosophical movement that originated in the city of Miletus, located in present-day Turkey, during the 6th century BCE. The school is named after the three philosophers who are considered its founders: Thales, Anaximander, and Anaximenes. The Milesian School is known for its emphasis on naturalistic explanations for the origin and nature of the universe, as opposed to supernatural or mythical explanations. Thales is famous for his belief that all matter can be reduced to water, Anaximander for his concept of the apeiron or the boundless, and Anaximenes for his idea that air was the fundamental substance of the cosmos. The Milesian School is regarded as one of the earliest examples of systematic philosophical thought in Western history.",
+                movement: nil,
+                philosopher: nil
+            ),
+            School(
+                title: "Pythagoreanism",
+                description: "Pythagoreanism is a philosophical and mystical school that originated in ancient Greece and is based on the belief that all reality can be reduced to numbers. The philosophy also emphasizes the idea of a harmonious universe that can be understood through mathematical relationships and the cultivation of virtues. Pythagoreans believed in reincarnation and the transmigration of souls, with each lifetime offering an opportunity for spiritual growth and development.",
+                movement: nil,
+                philosopher: nil
+            ),
+            School(
+                title: "Stoicism",
+                description: "Stoicism is a philosophy that originated in ancient Greece and was later developed by Roman thinkers. It teaches that individuals should strive for inner peace and tranquility by accepting what is beyond their control and focusing on what they can control: their own thoughts, attitudes, and actions. Stoics believe that virtue is the key to happiness and that one should live in accordance with nature and reason. The philosophy emphasizes self-discipline, rationality, and the importance of living in harmony with others. Stoicism has had a lasting influence on Western thought and has been embraced by many as a practical philosophy for daily life.",
+                movement: nil,
+                philosopher: nil
+            ),
+            School(
+                title: "Scholasticism",
+                description: "Scholasticism was a medieval philosophical and theological system that emphasized the use of reason and logic to reconcile Christian theology with classical philosophy. It emerged in the 11th century and reached its peak in the 12th and 13th centuries, particularly in universities such as Paris and Oxford. Scholasticism aimed to harmonize faith and reason, and its proponents believed that it was possible to use reason to understand the nature of God and the world. The key figures of Scholasticism include Thomas Aquinas, Anselm of Canterbury, and Peter Abelard. The approach fell out of fashion with the rise of Renaissance humanism and the scientific revolution. Nonetheless, its emphasis on rational inquiry and critical thinking continues to influence contemporary philosophical and theological thought.",
+                movement: nil,
+                philosopher: nil
+            ),
+            School(
+                title: "Mysticism",
+                description: "Mysticism is a philosophical and spiritual school of thought that emphasizes the direct experience of the divine or ultimate reality. Mystics seek to transcend the limitations of rational thought and language, in order to gain insight into the nature of reality through intuitive and experiential means. Mysticism can be found in many religious traditions, including Christianity, Islam, Judaism, Buddhism, Hinduism, and Taoism. However, mysticism is not limited to religion, as some philosophical and scientific schools of thought, such as Transcendentalism and Quantum Physics, also incorporate mystical elements. Mystics often use techniques such as meditation, prayer, contemplation, and asceticism to achieve a state of altered consciousness and experience the divine. They may also engage in ecstatic practices such as dancing, chanting, and drumming to attain spiritual transcendence. Mysticism often involves a rejection of traditional dogma and doctrine, as mystics seek to experience the divine directly rather than through the intermediary of a religious institution or text. This can lead to a focus on personal experience and subjective interpretation, as opposed to objective truth. In summary, mysticism is a philosophical and spiritual school of thought that seeks to transcend the limitations of rational thought and language to attain direct experiential knowledge of the divine or ultimate reality. It emphasizes personal experience and subjective interpretation, often through practices such as meditation and prayer.",
+                movement: nil,
+                philosopher: nil
+            )
+        ]
+    }
 }
 
 struct Philosopher {

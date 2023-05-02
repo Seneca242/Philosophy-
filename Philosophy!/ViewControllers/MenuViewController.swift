@@ -89,8 +89,13 @@ class MenuViewController: UIViewController {
     private func createTabbar(selectedIndex: Int) {
         let philosophersVC = PhilosophersTableViewController()
         let philosophersNavigationVC = UINavigationController(rootViewController: philosophersVC)
+        
         let philosophicalMovementsVC = PhilosophicalMovementsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        let philosophicalMovementsNavigationVC = UINavigationController(rootViewController: philosophicalMovementsVC)
+        
         let philosophicalSchoolsVC = PhilosophicalSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        let philosophicalSchoolsNavigationVC = UINavigationController(rootViewController: philosophicalSchoolsVC)
+        
         let tabbar = UITabBarController()
         let appearance = UITabBarAppearance()
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -112,22 +117,24 @@ class MenuViewController: UIViewController {
             selectedImage: UIImage(named: "books")
         )
         
-        philosophersNavigationVC.tabBarItem.badgeColor = .white
+//        philosophersNavigationVC.tabBarItem.badgeColor = .white
         
-        philosophicalMovementsVC.tabBarItem = .init(
+        philosophicalMovementsNavigationVC.tabBarItem = .init(
             title: "Philosophical movements",
             image: UIImage(named: "graduationcap")?.withTintColor(.black) .withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "graduationcap")
         )
         
-        philosophicalSchoolsVC.tabBarItem = .init(
+        philosophicalSchoolsNavigationVC.tabBarItem = .init(
             title: "Philosophical schools",
             image: UIImage(named: "list")?.withTintColor(.black) .withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "list")
         )
         
+//        philosophicalSchoolsNavigationVC.tabBarItem.badgeColor = .white
+        
         tabbar.modalPresentationStyle = .fullScreen
-        tabbar.viewControllers = [philosophersNavigationVC , philosophicalMovementsVC, philosophicalSchoolsVC]
+        tabbar.viewControllers = [philosophersNavigationVC , philosophicalMovementsNavigationVC, philosophicalSchoolsNavigationVC]
         tabbar.selectedIndex = selectedIndex
         present(tabbar, animated: true)
     }
