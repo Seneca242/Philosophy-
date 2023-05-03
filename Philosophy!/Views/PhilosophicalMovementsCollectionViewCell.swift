@@ -12,6 +12,7 @@ class PhilosophicalMovementsCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     

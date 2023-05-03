@@ -90,10 +90,10 @@ class MenuViewController: UIViewController {
         let philosophersVC = PhilosophersTableViewController()
         let philosophersNavigationVC = UINavigationController(rootViewController: philosophersVC)
         
-        let philosophicalMovementsVC = PhilosophicalMovementsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        let philosophicalMovementsVC = MovementsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         let philosophicalMovementsNavigationVC = UINavigationController(rootViewController: philosophicalMovementsVC)
         
-        let philosophicalSchoolsVC = PhilosophicalSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        let philosophicalSchoolsVC = SchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
         let philosophicalSchoolsNavigationVC = UINavigationController(rootViewController: philosophicalSchoolsVC)
         
         let tabbar = UITabBarController()

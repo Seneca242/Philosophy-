@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class PhilosophicalSchoolsCollectionViewController: UICollectionViewController {
+class SchoolsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class PhilosophicalSchoolsCollectionViewController: UICollectionViewController {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         let screenWidth = UIScreen.main.bounds.width
         let itemWidth = (screenWidth - flowLayout.minimumInteritemSpacing * 2 - flowLayout.sectionInset.left - flowLayout.sectionInset.right) / 3
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
@@ -45,7 +45,7 @@ class PhilosophicalSchoolsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return 10
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
