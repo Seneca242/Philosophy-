@@ -68,7 +68,7 @@ class PhilosophersTableViewController: UITableViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+//        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navBarAppearance.backgroundColor = UIColor(
             red: 183/255,
             green: 65/255,

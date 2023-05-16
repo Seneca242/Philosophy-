@@ -107,7 +107,11 @@ class MenuViewController: UIViewController {
         )
         
         tabbar.tabBar.standardAppearance = appearance
-        tabbar.tabBar.scrollEdgeAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabbar.tabBar.scrollEdgeAppearance = appearance
+        } else {
+            tabbar.tabBar.isTranslucent = true
+        }
         tabbar.tabBar.tintColor = .white
 //        tabbar.tabBar.unselectedItemTintColor = UIColor.black
         

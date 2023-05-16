@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
 		048032632A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift */; };
+		0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */; };
 		04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101B29E4995D00571072 /* AppDelegate.swift */; };
 		04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101D29E4995D00571072 /* SceneDelegate.swift */; };
 		04B8102029E4995D00571072 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101F29E4995D00571072 /* MenuViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosopherDetailsViewController.swift; sourceTree = "<group>"; };
 		048032622A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalMovementsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Philosophy.xcdatamodel; sourceTree = "<group>"; };
 		04B8101829E4995D00571072 /* Philosophy!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Philosophy!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8101B29E4995D00571072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B8101D29E4995D00571072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				04B8102629E4996000571072 /* LaunchScreen.storyboard */,
 				04B8101B29E4995D00571072 /* AppDelegate.swift */,
+				0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */,
 				04B8101D29E4995D00571072 /* SceneDelegate.swift */,
 				04B8102929E4996000571072 /* Info.plist */,
 			);
@@ -212,6 +215,7 @@
 				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,
 				04B8103229E49A0200571072 /* MovementsCollectionViewController.swift in Sources */,
+				0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */,
 				04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */,
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
 				045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */,
@@ -362,7 +366,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,7 +397,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,6 +436,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */,
+			);
+			currentVersion = 0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */;
+			path = Philosophy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04B8101029E4995D00571072 /* Project object */;
 }
