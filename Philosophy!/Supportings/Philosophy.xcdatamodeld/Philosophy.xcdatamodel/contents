@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Philosopher" representedClassName="Philosopher" syncable="YES" codeGenerationType="class">
+    <entity name="MovementNew" representedClassName="MovementNew" syncable="YES" codeGenerationType="class">
+        <attribute name="movementDescription" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="philosophers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhilosopherNew" inverseName="movements" inverseEntity="PhilosopherNew"/>
+        <relationship name="schools" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SchoolNew" inverseName="movements" inverseEntity="SchoolNew"/>
+    </entity>
+    <entity name="PhilosopherNew" representedClassName="PhilosopherNew" syncable="YES" codeGenerationType="class">
         <attribute name="biography" attributeType="String"/>
         <attribute name="doctrine" attributeType="String"/>
-        <attribute name="movement" optional="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="philosopherImage" attributeType="String"/>
+        <relationship name="movements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MovementNew" inverseName="philosophers" inverseEntity="MovementNew"/>
+        <relationship name="schools" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SchoolNew" inverseName="philosophers" inverseEntity="SchoolNew"/>
+    </entity>
+    <entity name="SchoolNew" representedClassName="SchoolNew" syncable="YES" codeGenerationType="class">
+        <attribute name="schoolDescription" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="movements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MovementNew" inverseName="schools" inverseEntity="MovementNew"/>
+        <relationship name="philosophers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhilosopherNew" inverseName="schools" inverseEntity="PhilosopherNew"/>
     </entity>
 </model>

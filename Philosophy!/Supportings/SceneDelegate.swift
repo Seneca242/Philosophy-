@@ -19,5 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = MenuViewController()
     }
+    
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        StorageManager.shared.saveContext()
+    }
 }
 

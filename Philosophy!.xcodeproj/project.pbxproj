@@ -20,7 +20,7 @@
 		04B8103429E49A1B00571072 /* SchoolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8103329E49A1B00571072 /* SchoolsCollectionViewController.swift */; };
 		04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D046F729E57BCF006FC424 /* PhilosophyModel.swift */; };
 		04D046FA29E5A7C7006FC424 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */; };
-		04D0470229E5CD45006FC424 /* PhilosophyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0470129E5CD45006FC424 /* PhilosophyData.swift */; };
+		04E2009A2A1402E300B83041 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E200992A1402E300B83041 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		04B8103329E49A1B00571072 /* SchoolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsCollectionViewController.swift; sourceTree = "<group>"; };
 		04D046F729E57BCF006FC424 /* PhilosophyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophyModel.swift; sourceTree = "<group>"; };
 		04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
-		04D0470129E5CD45006FC424 /* PhilosophyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophyData.swift; sourceTree = "<group>"; };
+		04E200992A1402E300B83041 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				04D046FC29E5CBC8006FC424 /* ViewControllers */,
 				04D046FD29E5CBE7006FC424 /* Views */,
 				04D046FB29E5CBA3006FC424 /* Model */,
-				04D0470029E5CD0F006FC424 /* DataManager */,
+				04D0470029E5CD0F006FC424 /* StorageManager */,
 				04D046FE29E5CC0D006FC424 /* Sources */,
 				04D046FF29E5CC27006FC424 /* Supportings */,
 			);
@@ -131,12 +131,12 @@
 			path = Supportings;
 			sourceTree = "<group>";
 		};
-		04D0470029E5CD0F006FC424 /* DataManager */ = {
+		04D0470029E5CD0F006FC424 /* StorageManager */ = {
 			isa = PBXGroup;
 			children = (
-				04D0470129E5CD45006FC424 /* PhilosophyData.swift */,
+				04E200992A1402E300B83041 /* StorageManager.swift */,
 			);
-			path = DataManager;
+			path = StorageManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,10 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D0470229E5CD45006FC424 /* PhilosophyData.swift in Sources */,
 				04B8103429E49A1B00571072 /* SchoolsCollectionViewController.swift in Sources */,
 				048032632A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift in Sources */,
 				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
+				04E2009A2A1402E300B83041 /* StorageManager.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,
 				04B8103229E49A0200571072 /* MovementsCollectionViewController.swift in Sources */,
 				0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */,
