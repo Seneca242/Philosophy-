@@ -20,9 +20,9 @@ class StorageManager {
         return container
     }()
     
-    private let viewContext: NSManagedObjectContext
+    let viewContext: NSManagedObjectContext
     
-    private init(){
+    private init() {
         viewContext = persistentContainer.viewContext
     }
 
