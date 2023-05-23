@@ -11,23 +11,24 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private let storeManager = StorageManager.shared
+    private let storageManager = StorageManager.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        UITabBar.appearance().unselectedItemTintColor = .black
         
         let fetchRequest: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
-
+        
         var records = 0
         
         let philosophers = Philosopher.getPhilosopher()
-        let context = storeManager.viewContext
+        let context = storageManager.viewContext
         
         do {
-          let count = try context.count(for: fetchRequest)
-          records = count
-          print("Data is there already?")
+            let count = try context.count(for: fetchRequest)
+            records = count
+            print("Is Data there already?")
         } catch {
-          print(error.localizedDescription)
+            print(error.localizedDescription)
         }
         
         guard records == 0 else { return true }
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             philosopherModel.biography = philosopher.biography
             philosopherModel.doctrine = philosopher.doctrine
             philosopherModel.philosopherImage = philosopher.philosopherImage
-            storeManager.saveContext()
+            storageManager.saveContext()
         }
         
         return true

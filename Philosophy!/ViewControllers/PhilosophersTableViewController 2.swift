@@ -6,16 +6,13 @@
 //
 
 import UIKit
-import CoreData
 
 class PhilosophersTableViewController: UITableViewController {
     
     private let cellID = "philosopherCell"
-//    private let philosopher = Philosopher.getPhilosopher()
-    private lazy var philosopher: [Philosopher] = {
-        let coreDataModels = fetchPhilisophers()
-        return convertCoreDataModelsToPhilosophyModels(coreDataModels)
-    }()
+    
+//    private let philosopher: Philosopher?
+    private let philosopher = Philosopher.getPhilosopher()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,33 +21,9 @@ class PhilosophersTableViewController: UITableViewController {
         tableView.backgroundColor = .black
         setupNavigationBar()
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellID)
+       
     }
 
-    private func fetchPhilisophers() -> [PhilosopherNew] {
-        let request: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
-        var fetchedPhilosophers: [PhilosopherNew] = []
-        do {
-            fetchedPhilosophers = try StorageManager.shared.viewContext.fetch(request)
-        } catch let error {
-            print("Error fetching philosophers \(error)")
-        }
-        return fetchedPhilosophers
-    }
-    
-    private func convertCoreDataModelsToPhilosophyModels(_ coreDataModels: [PhilosopherNew]) -> [Philosopher] {
-        coreDataModels.map {
-            Philosopher(
-                name: $0.name!,
-                biography: $0.biography!,
-                philosopherImage: $0.philosopherImage!,
-                doctrine: $0.doctrine!,
-                movement: nil,
-                school: nil
-            )
-        }
-    }
-    
-    
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
