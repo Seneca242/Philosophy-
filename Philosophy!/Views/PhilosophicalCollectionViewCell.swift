@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhilosophicalMovementsCollectionViewCell: UICollectionViewCell {
+class PhilosophicalCollectionViewCell: UICollectionViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -16,8 +16,12 @@ class PhilosophicalMovementsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func configure(with movement: Movement) {
+    func configureMovementCell(with movement: Movement) {
         titleLabel.text = movement.title
+        }
+    
+    func configureSchoolCell(with school: School) {
+        titleLabel.text = school.title
         }
     
     override init(frame: CGRect) {

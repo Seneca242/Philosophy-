@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
-		048032632A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift */; };
+		048032632A015322000517CF /* PhilosophicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */; };
 		0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */; };
 		04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101B29E4995D00571072 /* AppDelegate.swift */; };
 		04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8101D29E4995D00571072 /* SceneDelegate.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosopherDetailsViewController.swift; sourceTree = "<group>"; };
-		048032622A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalMovementsCollectionViewCell.swift; sourceTree = "<group>"; };
+		048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalCollectionViewCell.swift; sourceTree = "<group>"; };
 		0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Philosophy.xcdatamodel; sourceTree = "<group>"; };
 		04B8101829E4995D00571072 /* Philosophy!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Philosophy!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B8101B29E4995D00571072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */,
-				048032622A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift */,
+				048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B8103429E49A1B00571072 /* SchoolsCollectionViewController.swift in Sources */,
-				048032632A015322000517CF /* PhilosophicalMovementsCollectionViewCell.swift in Sources */,
+				048032632A015322000517CF /* PhilosophicalCollectionViewCell.swift in Sources */,
 				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
 				04E2009A2A1402E300B83041 /* StorageManager.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,

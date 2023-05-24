@@ -7,10 +7,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-private let philosophicalMovement = Movement.getMovement()
-
 class MovementsCollectionViewController: UICollectionViewController {
+    
+    let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    
+    private let reuseIdentifier = "Cell"
+    private let philosophicalMovement = Movement.getMovement()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,31 +30,23 @@ class MovementsCollectionViewController: UICollectionViewController {
 //    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        philosophicalMovement.count
-        15
+        philosophicalMovement.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalMovementsCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalCollectionViewCell else { return UICollectionViewCell()}
     
         cell.backgroundColor = .red
-//        let movement = philosophicalMovement[indexPath.item]
-//        cell.configure(with: movement)
+        let movement = philosophicalMovement[indexPath.item]
+        cell.configureMovementCell(with: movement)
     
         return cell
     }
     
     private func setupFlowLayout() {
         let flowLayout = UICollectionViewFlowLayout()
-//        flowLayout.minimumLineSpacing = 10
-//        flowLayout.minimumInteritemSpacing = 10
-//        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        let screenWidth = UIScreen.main.bounds.width
-//        let itemWidth = (screenWidth - flowLayout.minimumInteritemSpacing * 2 - flowLayout.sectionInset.left - flowLayout.sectionInset.right) / 3
-//        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         collectionView.collectionViewLayout = flowLayout
-
-        collectionView.register(PhilosophicalMovementsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(PhilosophicalCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     private func setupNavigationBar() {
@@ -101,14 +95,14 @@ extension MovementsCollectionViewController: UICollectionViewDelegateFlowLayout 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        sectionInserts
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        20
+        10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        20
+        10
     }
 }
