@@ -82,13 +82,18 @@ class MovementsCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movementDataisVC = MovementDetailsViewController()
+        let movement = philosophicalMovement[indexPath.item]
+        movementDataisVC.movement = movement
+        navigationController?.pushViewController(movementDataisVC, animated: true)
+    }
 }
 
 extension MovementsCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 3
-        let paddingWidth = 20 * (itemsPerRow + 1)
+        let itemsPerRow: CGFloat = 2
+        let paddingWidth = 5 * (itemsPerRow + 1)
         let availableWidth = collectionView.frame.width - paddingWidth
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: widthPerItem)
