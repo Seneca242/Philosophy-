@@ -111,14 +111,16 @@ class PhilosophersTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.barTintColor = .white
         
+        searchController.searchBar.searchTextField.backgroundColor = UIColor.clear
+        searchController.searchBar.barTintColor = UIColor.clear
+        searchController.searchBar.backgroundImage = UIImage()
+        
         let placeholderAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         let attributedPlaceholder = NSAttributedString(string: "Search", attributes: placeholderAttributes)
-        UITextField.appearance(
-            whenContainedInInstancesOf: [UISearchBar.self]
-        ).attributedPlaceholder = attributedPlaceholder
-        
-        searchController.searchBar.setImage(
-            UIImage(systemName: "magnifyingglass")?.withTintColor(.black).withRenderingMode(.alwaysOriginal),
+
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = attributedPlaceholder
+        searchController.searchBar.setImage(UIImage(
+            systemName: "magnifyingglass")?.withTintColor(.black).withRenderingMode(.alwaysOriginal),
             for: .search,
             state: .normal
         )
