@@ -10,6 +10,16 @@ import CoreData
 
 class PhilosophersTableViewController: UITableViewController {
     
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var filteredPhilosopher: [Philosopher] = []
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     private let cellID = "philosopherCell"
 //    private let philosopher = Philosopher.getPhilosopher()
     private lazy var philosopher: [Philosopher] = {
@@ -24,6 +34,7 @@ class PhilosophersTableViewController: UITableViewController {
         tableView.backgroundColor = .black
         setupNavigationBar()
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellID)
+        setupSearchController()
     }
 
     private func fetchPhilisophers() -> [PhilosopherNew] {
@@ -58,7 +69,7 @@ class PhilosophersTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        philosopher.count
+        isFiltering ? filteredPhilosopher.count : philosopher.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,7 +81,7 @@ class PhilosophersTableViewController: UITableViewController {
         cell.selectedBackgroundView = backgroundView
         cell.backgroundColor = .black
         
-        let philosopher = philosopher[indexPath.row]
+        let philosopher = isFiltering ? filteredPhilosopher[indexPath.row] : philosopher[indexPath.row]
         cell.configure(with: philosopher)
         return cell
     }
@@ -78,7 +89,7 @@ class PhilosophersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let philosopherDetailsVC = PhilosopherDetailsViewController()
-        let philosoher = philosopher[indexPath.row]
+        let philosoher = isFiltering ? filteredPhilosopher[indexPath.row] : philosopher[indexPath.row]
         philosopherDetailsVC.philosopher = philosoher
         
         let selectedCell = tableView.cellForRow(at: indexPath)
@@ -87,6 +98,20 @@ class PhilosophersTableViewController: UITableViewController {
         selectedCell?.selectedBackgroundView = backgroundView
         
         navigationController?.pushViewController(philosopherDetailsVC, animated: true)
+    }
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.barTintColor = .white
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.font = UIFont.boldSystemFont(ofSize: 17)
+            textField.textColor = .white
+        }
     }
     
     private func setupNavigationBar() {
@@ -121,4 +146,19 @@ class PhilosophersTableViewController: UITableViewController {
     }
     
     
+}
+
+// MARK: - UISearchResultsUpdating
+extension PhilosophersTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredPhilosopher = philosopher.filter { chracter in
+            chracter.name.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
+    }
 }
