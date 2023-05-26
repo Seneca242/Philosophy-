@@ -101,6 +101,11 @@ class PhilosophersTableViewController: UITableViewController {
     }
     
     private func setupSearchController() {
+                        
+        searchController.searchBar.searchTextField.backgroundColor = UIColor.clear
+        searchController.searchBar.barTintColor = UIColor.clear
+        searchController.searchBar.backgroundImage = UIImage()
+            
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -108,8 +113,15 @@ class PhilosophersTableViewController: UITableViewController {
         
         let placeholderAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         let attributedPlaceholder = NSAttributedString(string: "Search", attributes: placeholderAttributes)
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = attributedPlaceholder
-        searchController.searchBar.setImage(UIImage(systemName: "magnifyingglass"), for: .search, state: .normal)
+        UITextField.appearance(
+            whenContainedInInstancesOf: [UISearchBar.self]
+        ).attributedPlaceholder = attributedPlaceholder
+        
+        searchController.searchBar.setImage(
+            UIImage(systemName: "magnifyingglass")?.withTintColor(.black).withRenderingMode(.alwaysOriginal),
+            for: .search,
+            state: .normal
+        )
         searchController.searchBar.tintColor = .black
 
         
@@ -119,6 +131,11 @@ class PhilosophersTableViewController: UITableViewController {
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             textField.font = UIFont.boldSystemFont(ofSize: 17)
             textField.textColor = .white
+            textField.backgroundColor = .clear
+            textField.borderStyle = .none
+            textField.layer.backgroundColor = UIColor.clear.cgColor
+            textField.layer.borderWidth = 0
+            textField.layer.borderColor = UIColor.clear.cgColor
         }
     }
     

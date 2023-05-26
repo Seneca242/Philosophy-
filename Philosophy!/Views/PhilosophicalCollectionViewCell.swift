@@ -16,19 +16,20 @@ class PhilosophicalCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func configureMovementCell(with movement: Movement) {
-        titleLabel.text = movement.title
-        }
-    
-    func configureSchoolCell(with school: School) {
-        titleLabel.text = school.title
-        }
+    func configureTitle(with title: String) {
+        titleLabel.text = title
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
     }
     
+   //https://localhost:8080/ - base url
+    // Vapor - бэкенд на свифте
+    // https://localhost:8080/schools - список школ
+    // https://localhost:8080/movements -
+    // Apache
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -53,7 +53,7 @@ class SchoolsCollectionViewController: UICollectionViewController {
     
         cell.backgroundColor = UIColor.red
         let school = philosophicalSchools[indexPath.item]
-        cell.configureSchoolCell(with: school)
+        cell.configureTitle(with: school.title)
         
         return cell
     }
