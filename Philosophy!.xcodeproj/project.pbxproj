@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040336CE2A20D0D700D957C3 /* MovementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */; };
+		040336D12A225EE900D957C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 040336D02A225EE900D957C3 /* SnapKit */; };
 		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
 		048032632A015322000517CF /* PhilosophicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */; };
 		0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040336D12A225EE900D957C3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +160,9 @@
 			dependencies = (
 			);
 			name = "Philosophy!";
+			packageProductDependencies = (
+				040336D02A225EE900D957C3 /* SnapKit */,
+			);
 			productName = "Philosophy!";
 			productReference = 04B8101829E4995D00571072 /* Philosophy!.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 04B8100F29E4995D00571072;
+			packageReferences = (
+				040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 04B8101929E4995D00571072 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		040336D02A225EE900D957C3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */ = {

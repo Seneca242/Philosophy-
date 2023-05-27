@@ -16,12 +16,8 @@ class PhilosophicalCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func configureMovementCell(with movement: Movement) {
-        titleLabel.text = movement.title
-        }
-    
-    func configureSchoolCell(with school: School) {
-        titleLabel.text = school.title
+    func configureCell(with title: String) {
+        titleLabel.text = title
         }
     
     override init(frame: CGRect) {

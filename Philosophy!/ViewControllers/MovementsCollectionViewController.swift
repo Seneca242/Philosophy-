@@ -38,7 +38,7 @@ class MovementsCollectionViewController: UICollectionViewController {
     
         cell.backgroundColor = .red
         let movement = philosophicalMovement[indexPath.item]
-        cell.configureMovementCell(with: movement)
+        cell.configureCell(with: movement.title)
     
         return cell
     }
