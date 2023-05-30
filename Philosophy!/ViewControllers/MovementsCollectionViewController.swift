@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import CoreData
 
 class MovementsCollectionViewController: UICollectionViewController {
     
-    let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    private lazy var philosophicalMovements: [Movement] = {
+        let coreDataModels = fetchMovements()
+        return convertCoreDataModelsToPhilosophyModels(coreDataModels)
+    }()
+//    private let philosophicalMovement = Movement.getMovement()
     
+    private let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     private let reuseIdentifier = "Cell"
-    private let philosophicalMovement = Movement.getMovement()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +35,51 @@ class MovementsCollectionViewController: UICollectionViewController {
 //    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        philosophicalMovement.count
+//        philosophicalMovement.count
+        philosophicalMovements.count
     }
 
+#warning("add error description")
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalCollectionViewCell else { return UICollectionViewCell()}
     
         cell.backgroundColor = .red
-        let movement = philosophicalMovement[indexPath.item]
+//        let movement = philosophicalMovement[indexPath.item]
+        let movement = philosophicalMovements[indexPath.item]
         cell.configureCell(with: movement.title)
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movementDataisVC = MovementDetailsViewController()
+        let movement = philosophicalMovements[indexPath.item]
+//        let movement = philosophicalMovement[indexPath.item]
+        movementDataisVC.movement = movement
+        navigationController?.pushViewController(movementDataisVC, animated: true)
+    }
+    
+    private func fetchMovements() -> [MovementNew] {
+        let request: NSFetchRequest<MovementNew> = MovementNew.fetchRequest()
+        var fetchedMovements: [MovementNew] = []
+        do {
+            fetchedMovements = try StorageManager.shared.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching philosophers \(error)")
+        }
+        return fetchedMovements
+    }
+    
+    #warning("deal with optional properties")
+    private func convertCoreDataModelsToPhilosophyModels(_ coreDataModels: [MovementNew]) -> [Movement] {
+        coreDataModels.map {
+            Movement(
+                title: $0.title!,
+                description: $0.movementDescription!,
+                school: nil,
+                philosopher: nil
+            )
+        }
     }
     
     private func setupFlowLayout() {
@@ -80,14 +119,6 @@ class MovementsCollectionViewController: UICollectionViewController {
         dismiss(animated: true)
     }
 
-    // MARK: UICollectionViewDelegate
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movementDataisVC = MovementDetailsViewController()
-        let movement = philosophicalMovement[indexPath.item]
-        movementDataisVC.movement = movement
-        navigationController?.pushViewController(movementDataisVC, animated: true)
-    }
 }
 
 extension MovementsCollectionViewController: UICollectionViewDelegateFlowLayout {

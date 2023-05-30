@@ -14,7 +14,7 @@ struct Philosophy {
 
 struct Movement {
     let title: String
-    let description: String?
+    let description: String
     let school: [School]?
     let philosopher: [Philosopher]?
     

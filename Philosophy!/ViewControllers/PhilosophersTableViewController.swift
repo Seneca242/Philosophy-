@@ -23,7 +23,7 @@ class PhilosophersTableViewController: UITableViewController {
     private let cellID = "philosopherCell"
 //    private let philosopher = Philosopher.getPhilosopher()
     private lazy var philosopher: [Philosopher] = {
-        let coreDataModels = fetchPhilisophers()
+        let coreDataModels = fetchPhilosophers()
         return convertCoreDataModelsToPhilosophyModels(coreDataModels)
     }()
     
@@ -37,7 +37,7 @@ class PhilosophersTableViewController: UITableViewController {
         setupSearchController()
     }
 
-    private func fetchPhilisophers() -> [PhilosopherNew] {
+    private func fetchPhilosophers() -> [PhilosopherNew] {
         let request: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
         var fetchedPhilosophers: [PhilosopherNew] = []
         do {
@@ -125,7 +125,7 @@ class PhilosophersTableViewController: UITableViewController {
         definesPresentationContext = true
         
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            textField.font = UIFont.boldSystemFont(ofSize: 17)
+            textField.font = UIFont(name: "Cheltenham", size: 20)
             textField.textColor = .white
             
             textField.borderStyle = .none

@@ -19,36 +19,6 @@ class MovementDetailsViewController: UIViewController {
         textView.textAlignment = .justified
         return textView
     }()
-
-//    private var contentSize: CGSize {
-//        CGSize(width: view.frame.width, height: view.frame.height + 200)
-//    }
-//
-//    private lazy var scrollView: UIScrollView = {
-//        let scrollView = UIScrollView()
-//        scrollView.backgroundColor = .black
-//        scrollView.frame = view.bounds
-//        scrollView.showsVerticalScrollIndicator = true
-//        scrollView.contentSize = contentSize
-//        return scrollView
-//    }()
-//
-//    private lazy var contentView: UIView = {
-//        let contentView = UIView()
-//        return contentView
-//    }()
-
-//    private lazy var descriptionLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = movement?.description
-//        label.font = UIFont(name: "Cheltenham", size: 40)
-//        label.textColor = .white
-//        label.numberOfLines = 0
-//        label.backgroundColor = .black
-//        label.textAlignment = .justified
-//        label.lineBreakMode = .byWordWrapping
-//        return label
-//    }()
     
     private lazy var philosophersButton: UIButton = {
         let button = UIButton()
@@ -58,6 +28,11 @@ class MovementDetailsViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
 //        button.addTarget(self, action: #selector(openPhilosophersList), for: .touchUpInside)
+        
+        let topInset: CGFloat = -20
+        button.titleEdgeInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+        button.sizeToFit()
+        
         button.tag = 0
         return button
     }()
@@ -80,7 +55,7 @@ class MovementDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = movement?.title
-        view.backgroundColor = .yellow
+        view.backgroundColor = .black
         setupConstraints()
     }
     
