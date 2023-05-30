@@ -13,7 +13,11 @@ class MovementDetailsViewController: UIViewController {
     private lazy var textView: UITextView = {
         let textView = UITextView()
         textView.text = movement?.description
-        textView.font = UIFont(name: "Cheltenham", size: 40)
+        
+//        textView.font = UIFont(name: "Cheltenham", size: 40)
+        let fontDescriptor = UIFontDescriptor(name: "Cheltenham", size: 20)
+        textView.font = UIFont(descriptor: fontDescriptor, size: 0)
+        
         textView.textColor = .white
         textView.backgroundColor = .black
         textView.textAlignment = .justified
@@ -25,8 +29,6 @@ class MovementDetailsViewController: UIViewController {
         button.setTitle("PHILOSOPHERS", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
 //        button.addTarget(self, action: #selector(openPhilosophersList), for: .touchUpInside)
         
         let topInset: CGFloat = -20
@@ -42,8 +44,6 @@ class MovementDetailsViewController: UIViewController {
         button.setTitle("PHILOSOPHICAL SCHOOLS", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.numberOfLines = 0
 //        button.addTarget(self, action: #selector(openSchoolsCollection), for: .touchUpInside)
         button.tag = 2
