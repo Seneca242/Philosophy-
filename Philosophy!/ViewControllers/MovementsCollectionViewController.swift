@@ -42,7 +42,6 @@ class MovementsCollectionViewController: UICollectionViewController {
 #warning("add error description")
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalCollectionViewCell else { return UICollectionViewCell()}
-    
         cell.backgroundColor = .red
 //        let movement = philosophicalMovement[indexPath.item]
         let movement = philosophicalMovements[indexPath.item]

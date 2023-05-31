@@ -29,7 +29,7 @@ class MovementDetailsViewController: UIViewController {
         button.setTitle("PHILOSOPHERS", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
-//        button.addTarget(self, action: #selector(openPhilosophersList), for: .touchUpInside)
+        button.addTarget(self, action: #selector(openPhilosophersList), for: .touchUpInside)
         
         let topInset: CGFloat = -20
         button.titleEdgeInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
@@ -79,6 +79,13 @@ class MovementDetailsViewController: UIViewController {
             make.left.right.bottom.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.top.equalTo(philosophersButton.snp.bottom).offset(16)
         }
+    }
+    
+    @objc private func openPhilosophersList() {
+        let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        let movements = Movement.getMovement()
+        movementPhilosophersCollectionVC.movementPhilosophers = movements
+        navigationController?.pushViewController(movementPhilosophersCollectionVC, animated: true)
     }
     
 

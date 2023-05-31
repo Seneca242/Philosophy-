@@ -37,7 +37,7 @@ class PhilosopherDetailsViewController: UIViewController {
     private lazy var biographyLabel: UILabel = {
         let label = UILabel()
         label.text = philosopher?.biography
-        label.font = UIFont(name: "Cheltenham", size: 40)
+        label.font = UIFont(name: "Cheltenham", size: 20)
         label.textColor = .white
         label.numberOfLines = 0
         label.backgroundColor = .black

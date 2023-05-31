@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		040336CE2A20D0D700D957C3 /* MovementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */; };
 		040336D12A225EE900D957C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 040336D02A225EE900D957C3 /* SnapKit */; };
+		040336F62A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */; };
+		0403371D2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403371C2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift */; };
 		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
 		048032632A015322000517CF /* PhilosophicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */; };
 		0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDetailsViewController.swift; sourceTree = "<group>"; };
+		040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementPhilosophersCollectionViewController.swift; sourceTree = "<group>"; };
+		0403371C2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosopherDetailsViewController.swift; sourceTree = "<group>"; };
 		048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalCollectionViewCell.swift; sourceTree = "<group>"; };
 		0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Philosophy.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */,
 				04B8103129E49A0200571072 /* MovementsCollectionViewController.swift */,
 				040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */,
+				040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */,
 				04B8103329E49A1B00571072 /* SchoolsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
@@ -112,6 +117,7 @@
 			children = (
 				04D046F929E5A7C7006FC424 /* PersonTableViewCell.swift */,
 				048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */,
+				0403371C2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				04B8102029E4995D00571072 /* MenuViewController.swift in Sources */,
 				04E2009A2A1402E300B83041 /* StorageManager.swift in Sources */,
 				04B8101C29E4995D00571072 /* AppDelegate.swift in Sources */,
+				040336F62A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift in Sources */,
 				040336CE2A20D0D700D957C3 /* MovementDetailsViewController.swift in Sources */,
 				04B8103229E49A0200571072 /* MovementsCollectionViewController.swift in Sources */,
 				0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */,
@@ -232,6 +239,7 @@
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
 				045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */,
 				04D046FA29E5A7C7006FC424 /* PersonTableViewCell.swift in Sources */,
+				0403371D2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift in Sources */,
 				04B8103029E499E400571072 /* PhilosophersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

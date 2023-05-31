@@ -1,13 +1,13 @@
 //
-//  PhilosophicalMovementsCollectionViewCell.swift
+//  PhilosophicalWithImageCollectionViewCell.swift
 //  Philosophy!
 //
-//  Created by Дмитрий Дмитрий on 02.05.2023.
+//  Created by Дмитрий Дмитрий on 31.05.2023.
 //
 
 import UIKit
 
-class PhilosophicalCollectionViewCell: UICollectionViewCell {
+class PhilosophicalWithImageCollectionViewCell: UICollectionViewCell {
     
     var alignment: NSTextAlignment = .center {
         didSet {
@@ -22,8 +22,18 @@ class PhilosophicalCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func configureCell(with title: String) {
-        titleLabel.text = title
+    private lazy var philosopherImage: UIImageView = {
+        let image = UIImageView()
+        return image
+    }()
+    
+    func configureCell(with philosopher: Philosopher) {
+        titleLabel.text = philosopher.name
+        philosopherImage.image = UIImage(named: "\(philosopher.philosopherImage)")
+        philosopherImage.backgroundColor = .black
+        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+        philosopherImage.contentMode = .scaleAspectFill
+        philosopherImage.clipsToBounds = true
         }
     
     override init(frame: CGRect) {
@@ -43,5 +53,4 @@ class PhilosophicalCollectionViewCell: UICollectionViewCell {
         titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
     }
-    
 }
