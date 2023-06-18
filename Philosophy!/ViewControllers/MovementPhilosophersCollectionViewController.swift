@@ -6,20 +6,21 @@
 //
 
 import UIKit
-
-private let reuseIdentifier = "Cell"
+import CoreData
 
 class MovementPhilosophersCollectionViewController: UICollectionViewController {
     
-    var movementPhilosophers: [Movement] = []
+    private lazy var movementPhilosophers: [Philosopher] = {
+        let coreDataModels = fetchPhilosophers()
+        return convertCoreDataModelsToPhilosophyModels(coreDataModels)
+    }()
 
     private let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-    private let reuseIdentifier = "Cell2"
+    private let reuseIdentifier = "Cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .black
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         setupNavigationBar()
         setupFlowLayout()
     }
@@ -37,18 +38,42 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalWithImageCollectionViewCell else { return UICollectionViewCell()}
         cell.backgroundColor = .red
         cell.alignment = .left
         let movementPhilosopher = movementPhilosophers[indexPath.item]
-        cell.configureCell(with: movementPhilosopher.title)
+        cell.configureCell(with: movementPhilosopher)
         return cell
+    }
+    
+    private func fetchPhilosophers() -> [PhilosopherNew] {
+        let request: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
+        var fetchedPhilosophers: [PhilosopherNew] = []
+        do {
+            fetchedPhilosophers = try StorageManager.shared.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching philosophers \(error)")
+        }
+        return fetchedPhilosophers
+    }
+    
+    private func convertCoreDataModelsToPhilosophyModels(_ coreDataModels: [PhilosopherNew]) -> [Philosopher] {
+        coreDataModels.map {
+            Philosopher(
+                name: $0.name!,
+                biography: $0.biography!,
+                philosopherImage: $0.philosopherImage!,
+                doctrine: $0.doctrine!,
+                movement: nil,
+                school: nil
+            )
+        }
     }
     
     private func setupFlowLayout() {
         let flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
-        collectionView.register(PhilosophicalCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(PhilosophicalWithImageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
     private func setupNavigationBar() {
@@ -108,7 +133,7 @@ extension MovementPhilosophersCollectionViewController: UICollectionViewDelegate
         let paddingWidth = 5 * (itemsPerRow + 1)
         let availableWidth = collectionView.frame.width - paddingWidth
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: 20)
+        return CGSize(width: widthPerItem, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

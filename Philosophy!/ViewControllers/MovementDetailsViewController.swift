@@ -30,11 +30,9 @@ class MovementDetailsViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
         button.addTarget(self, action: #selector(openPhilosophersList), for: .touchUpInside)
-        
         let topInset: CGFloat = -20
-        button.titleEdgeInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+//        button.titleEdgeInsets = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
         button.sizeToFit()
-        
         button.tag = 0
         return button
     }()
@@ -45,7 +43,7 @@ class MovementDetailsViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
         button.titleLabel?.numberOfLines = 0
-//        button.addTarget(self, action: #selector(openSchoolsCollection), for: .touchUpInside)
+        button.addTarget(self, action: #selector(openSchoolsList), for: .touchUpInside)
         button.tag = 2
         return button
     }()
@@ -83,9 +81,14 @@ class MovementDetailsViewController: UIViewController {
     
     @objc private func openPhilosophersList() {
         let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(collectionViewLayout: UICollectionViewLayout())
-        let movements = Movement.getMovement()
-        movementPhilosophersCollectionVC.movementPhilosophers = movements
+//        let movements = Movement.getMovement()
+//        movementPhilosophersCollectionVC.movementPhilosophers = movements
         navigationController?.pushViewController(movementPhilosophersCollectionVC, animated: true)
+    }
+    
+    @objc private func openSchoolsList() {
+        let movementSchoolsCollectionVC = MovementSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        navigationController?.pushViewController(movementSchoolsCollectionVC, animated: true)
     }
     
 

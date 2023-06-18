@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		040336CE2A20D0D700D957C3 /* MovementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */; };
-		040336D12A225EE900D957C3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 040336D02A225EE900D957C3 /* SnapKit */; };
 		040336F62A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */; };
 		0403371D2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403371C2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift */; };
+		041FA5EC2A2FC18F00D8B642 /* MovementSchoolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FA5EB2A2FC18F00D8B642 /* MovementSchoolsCollectionViewController.swift */; };
+		0439F1042A2A537B00CCB7B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0439F1032A2A537B00CCB7B5 /* SnapKit */; };
 		045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */; };
 		048032632A015322000517CF /* PhilosophicalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */; };
 		0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A2A09069700BD121D /* Philosophy.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDetailsViewController.swift; sourceTree = "<group>"; };
 		040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementPhilosophersCollectionViewController.swift; sourceTree = "<group>"; };
 		0403371C2A2740A400D957C3 /* PhilosophicalWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		041FA5EB2A2FC18F00D8B642 /* MovementSchoolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementSchoolsCollectionViewController.swift; sourceTree = "<group>"; };
 		045222DF29F3013200952D1B /* PhilosopherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosopherDetailsViewController.swift; sourceTree = "<group>"; };
 		048032622A015322000517CF /* PhilosophicalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhilosophicalCollectionViewCell.swift; sourceTree = "<group>"; };
 		0490EB4B2A09069700BD121D /* Philosophy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Philosophy.xcdatamodel; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040336D12A225EE900D957C3 /* SnapKit in Frameworks */,
+				0439F1042A2A537B00CCB7B5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +109,7 @@
 				04B8103129E49A0200571072 /* MovementsCollectionViewController.swift */,
 				040336CD2A20D0D700D957C3 /* MovementDetailsViewController.swift */,
 				040336F52A26801500D957C3 /* MovementPhilosophersCollectionViewController.swift */,
+				041FA5EB2A2FC18F00D8B642 /* MovementSchoolsCollectionViewController.swift */,
 				04B8103329E49A1B00571072 /* SchoolsCollectionViewController.swift */,
 			);
 			path = ViewControllers;
@@ -167,7 +170,7 @@
 			);
 			name = "Philosophy!";
 			packageProductDependencies = (
-				040336D02A225EE900D957C3 /* SnapKit */,
+				0439F1032A2A537B00CCB7B5 /* SnapKit */,
 			);
 			productName = "Philosophy!";
 			productReference = 04B8101829E4995D00571072 /* Philosophy!.app */;
@@ -181,7 +184,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					04B8101729E4995D00571072 = {
 						CreatedOnToolsVersion = 14.3;
@@ -198,7 +201,7 @@
 			);
 			mainGroup = 04B8100F29E4995D00571072;
 			packageReferences = (
-				040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0439F1022A2A537B00CCB7B5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 04B8101929E4995D00571072 /* Products */;
 			projectDirPath = "";
@@ -235,6 +238,7 @@
 				040336CE2A20D0D700D957C3 /* MovementDetailsViewController.swift in Sources */,
 				04B8103229E49A0200571072 /* MovementsCollectionViewController.swift in Sources */,
 				0490EB4C2A09069700BD121D /* Philosophy.xcdatamodeld in Sources */,
+				041FA5EC2A2FC18F00D8B642 /* MovementSchoolsCollectionViewController.swift in Sources */,
 				04D046F829E57BCF006FC424 /* PhilosophyModel.swift in Sources */,
 				04B8101E29E4995D00571072 /* SceneDelegate.swift in Sources */,
 				045222E029F3013200952D1B /* PhilosopherDetailsViewController.swift in Sources */,
@@ -294,6 +298,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -354,6 +359,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -386,7 +392,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,7 +423,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,20 +464,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		0439F1022A2A537B00CCB7B5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		040336D02A225EE900D957C3 /* SnapKit */ = {
+		0439F1032A2A537B00CCB7B5 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 040336CF2A225EE900D957C3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 0439F1022A2A537B00CCB7B5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

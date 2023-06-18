@@ -37,7 +37,7 @@ class PhilosophicalCollectionViewCell: UICollectionViewCell {
     
     private func setupConstraints() {
         contentView.addSubview(titleLabel)
-        
+    
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true

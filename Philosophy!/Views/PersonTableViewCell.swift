@@ -46,7 +46,7 @@ class PersonTableViewCell: UITableViewCell {
         namePhilosopherLabel.textColor = .white
         philosopherImage.image = UIImage(named: "\(philosopher.philosopherImage)")
         philosopherImage.backgroundColor = .black
-        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
+//        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
         philosopherImage.contentMode = .scaleAspectFill
         philosopherImage.clipsToBounds = true
     }

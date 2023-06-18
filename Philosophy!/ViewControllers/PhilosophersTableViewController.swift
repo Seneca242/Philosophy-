@@ -36,6 +36,11 @@ class PhilosophersTableViewController: UITableViewController {
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellID)
         setupSearchController()
     }
+    
+//    #Preview("PhilosophersTableViewController") {
+//        PhilosophersTableViewController()
+//    }
+
 
     private func fetchPhilosophers() -> [PhilosopherNew] {
         let request: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
