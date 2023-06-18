@@ -32,18 +32,13 @@ class PhilosophicalWithImageCollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
         philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
     }
     
     func configureCell(with philosopher: Philosopher) {
@@ -63,8 +58,8 @@ class PhilosophicalWithImageCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             philosopherImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             philosopherImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            philosopherImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3),
-            philosopherImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.8)
+            philosopherImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.8),
+            philosopherImage.widthAnchor.constraint(equalTo: philosopherImage.heightAnchor)
         ])
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
