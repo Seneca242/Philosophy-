@@ -80,7 +80,10 @@ class MovementDetailsViewController: UIViewController {
     }
     
     @objc private func openPhilosophersList() {
-        let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+//        let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        
+        let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController()
+        
 //        let movements = Movement.getMovement()
 //        movementPhilosophersCollectionVC.movementPhilosophers = movements
         navigationController?.pushViewController(movementPhilosophersCollectionVC, animated: true)

@@ -10,15 +10,15 @@ import CoreData
 
 class MovementsCollectionViewController: UICollectionViewController {
     
-    private lazy var philosophicalMovements: [Movement] = {
+    lazy var philosophicalMovements: [Movement] = {
         let coreDataModels = fetchMovements()
         return convertCoreDataModelsToPhilosophyModels(coreDataModels)
     }()
-//    private let philosophicalMovement = Movement.getMovement()
+    //    private let philosophicalMovement = Movement.getMovement()
     
     private let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     private let reuseIdentifier = "Cell"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -58,7 +58,7 @@ class MovementsCollectionViewController: UICollectionViewController {
         navigationController?.pushViewController(movementDataisVC, animated: true)
     }
     
-    private func fetchMovements() -> [MovementNew] {
+    func fetchMovements() -> [MovementNew] {
         let request: NSFetchRequest<MovementNew> = MovementNew.fetchRequest()
         var fetchedMovements: [MovementNew] = []
         do {

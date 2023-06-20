@@ -10,10 +10,15 @@ import CoreData
 
 class MovementPhilosophersCollectionViewController: UICollectionViewController {
     
-    private lazy var movementPhilosophers: [Philosopher] = {
-        let coreDataModels = fetchPhilosophers()
-        return convertCoreDataModelsToPhilosophyModels(coreDataModels)
-    }()
+    var movement: MovementNew?
+    var index: Int?
+    var philosophers: [PhilosopherNew] = []
+    let movementsCollectionVC = MovementsCollectionViewController()
+    
+//    private lazy var movementPhilosophers: [Philosopher] = {
+//        let coreDataModels = fetchPhilosophers()
+//        return convertCoreDataModelsToPhilosophyModels(coreDataModels)
+//    }()
 
     private let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     private let reuseIdentifier = "Cell"
@@ -23,8 +28,23 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
         collectionView.backgroundColor = .black
         setupNavigationBar()
         setupFlowLayout()
+        
+        if let movement = movement {
+            philosophers = StorageManager.shared.movementPhilosophers(movement: movement)
+        }
+        collectionView.reloadData()
     }
-
+    
+    init(index: Int) {
+        self.index = index
+        movement = movementsCollectionVC.fetchMovements()[index]
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -34,15 +54,16 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movementPhilosophers.count
+//        movementPhilosophers.count
+        philosophers.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhilosophicalWithImageCollectionViewCell else { return UICollectionViewCell()}
         cell.backgroundColor = .red
         cell.alignment = .left
-        let movementPhilosopher = movementPhilosophers[indexPath.item]
-        cell.configureCell(with: movementPhilosopher)
+//        let movementPhilosopher = movementPhilosophers[indexPath.item]
+//        cell.configureCell(with: movementPhilosopher)
         return cell
     }
     
