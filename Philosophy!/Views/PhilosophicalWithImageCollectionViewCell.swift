@@ -38,11 +38,11 @@ class PhilosophicalWithImageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configureCell(with philosopher: Philosopher) {
+    func configureCell(with philosopher: PhilosopherNew) {
         layoutIfNeeded()
         titleLabel.text = philosopher.name
         philosopherImage.layer.cornerRadius = philosopherImage.bounds.width / 2
-        philosopherImage.image = UIImage(named: "\(philosopher.philosopherImage)")
+        philosopherImage.image = UIImage(named: "\(philosopher.philosopherImage ?? "")")
         philosopherImage.backgroundColor = .black
         philosopherImage.layer.cornerRadius = philosopherImage.frame.width / 2
         philosopherImage.contentMode = .scaleAspectFill

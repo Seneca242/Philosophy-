@@ -51,11 +51,11 @@ class MovementsCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movementDataisVC = MovementDetailsViewController()
         let movement = philosophicalMovements[indexPath.item]
+        let movementDetailsVC = MovementDetailsViewController(index: indexPath.item, movement: movement)
 //        let movement = philosophicalMovement[indexPath.item]
-        movementDataisVC.movement = movement
-        navigationController?.pushViewController(movementDataisVC, animated: true)
+//        movementDetailsVC.movement = movement
+        navigationController?.pushViewController(movementDetailsVC, animated: true)
     }
     
     func fetchMovements() -> [MovementNew] {
