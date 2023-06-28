@@ -9,24 +9,24 @@ import UIKit
 import SnapKit
 
 class MovementDetailsViewController: UIViewController {
-    
+
     var index = Int()
     var movement: Movement
-    
+
     private lazy var textView: UITextView = {
         let textView = UITextView()
         textView.text = movement.description
-        
+
 //        textView.font = UIFont(name: "Cheltenham", size: 40)
         let fontDescriptor = UIFontDescriptor(name: "Cheltenham", size: 20)
         textView.font = UIFont(descriptor: fontDescriptor, size: 0)
-        
+
         textView.textColor = .white
         textView.backgroundColor = .black
         textView.textAlignment = .justified
         return textView
     }()
-    
+
     private lazy var philosophersButton: UIButton = {
         let button = UIButton()
         button.setTitle("PHILOSOPHERS", for: .normal)
@@ -39,72 +39,72 @@ class MovementDetailsViewController: UIViewController {
         button.tag = 0
         return button
     }()
-    
+
     private lazy var philosophicalSchoolsButton: UIButton = {
         let button = UIButton()
         button.setTitle("PHILOSOPHICAL SCHOOLS", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Cheltenham", size: 20)
         button.titleLabel?.numberOfLines = 0
-//        button.addTarget(self, action: #selector(openSchoolsList), for: .touchUpInside)
+        button.addTarget(self, action: #selector(openSchoolsList), for: .touchUpInside)
         button.tag = 2
         return button
     }()
-    
+
     init(index: Int, movement: Movement) {
         self.index = index
         self.movement = movement
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = movement.title
         view.backgroundColor = .black
         setupConstraints()
     }
-    
+
 
     private func setupConstraints() {
         view.addSubviews(textView, philosophersButton, philosophicalSchoolsButton)
-        
+
         philosophersButton.snp.makeConstraints { make in
             make.top.left.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.right.equalTo(view.snp.centerX).inset(8)
             make.height.equalTo(44)
         }
-        
+
         philosophicalSchoolsButton.snp.makeConstraints { make in
             make.top.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.left.equalTo(view.snp.centerX).offset(8)
             make.height.equalTo(44)
         }
-        
+
         textView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(view.safeAreaLayoutGuide).inset(8)
             make.top.equalTo(philosophersButton.snp.bottom).offset(16)
         }
     }
-    
+
     @objc private func openPhilosophersList() {
 //        let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(collectionViewLayout: UICollectionViewLayout())
-        
+
+        let flowLayout = UICollectionViewFlowLayout()
         let movementPhilosophersCollectionVC = MovementPhilosophersCollectionViewController(index: index)
-        
+
 //        let movements = StorageManager.shared.movementPhilosophers(movement: movement)
 //        movementPhilosophersCollectionVC.movementPhilosophers = movements
         navigationController?.pushViewController(movementPhilosophersCollectionVC, animated: true)
     }
-    
-//    @objc private func openSchoolsList() {
-//        let movementSchoolsCollectionVC = MovementSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
-//        navigationController?.pushViewController(movementSchoolsCollectionVC, animated: true)
-//    }
-//
+
+    @objc private func openSchoolsList() {
+        let movementSchoolsCollectionVC = MovementSchoolsCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+        navigationController?.pushViewController(movementSchoolsCollectionVC, animated: true)
+    }
 
 }
 
@@ -115,3 +115,4 @@ extension UIView {
         }
     }
 }
+

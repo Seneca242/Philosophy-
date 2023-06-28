@@ -173,7 +173,7 @@ import CoreData
 
 
 class MovementPhilosophersCollectionViewController: UICollectionViewController {
-    
+
     var philosophers: [PhilosopherNew] = []
     var index: Int
     var movement: MovementNew?
@@ -181,29 +181,31 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
 
     private let sectionInserts = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     private let reuseIdentifier = "Cell"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .black
         setupNavigationBar()
         setupFlowLayout()
-        
+
         if let movement = movement {
             philosophers = StorageManager.shared.movementPhilosophers(movement: movement)
         }
         collectionView.reloadData()
     }
-    
+
     init(index: Int) {
         self.index = index
         movement = movements[index]
-        super.init(nibName: nil, bundle: nil)
+//        super.init(nibName: nil, bundle: nil)
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
-    
+
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 
     // MARK: UICollectionViewDataSource
 
@@ -225,7 +227,7 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
         cell.configureCell(with: movementPhilosopher)
         return cell
     }
-    
+
 //    private func fetchPhilosophers() -> [PhilosopherNew] {
 //        let request: NSFetchRequest<PhilosopherNew> = PhilosopherNew.fetchRequest()
 //        var fetchedPhilosophers: [PhilosopherNew] = []
@@ -236,7 +238,7 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
 //        }
 //        return fetchedPhilosophers
 //    }
-//    
+//
 //    private func convertCoreDataModelsToPhilosophyModels(_ coreDataModels: [PhilosopherNew]) -> [Philosopher] {
 //        coreDataModels.map {
 //            Philosopher(
@@ -249,7 +251,7 @@ class MovementPhilosophersCollectionViewController: UICollectionViewController {
 //            )
 //        }
 //    }
-    
+
     private func setupFlowLayout() {
         let flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
@@ -285,16 +287,17 @@ extension MovementPhilosophersCollectionViewController: UICollectionViewDelegate
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: 100)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         sectionInserts
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         10
     }
 }
+
